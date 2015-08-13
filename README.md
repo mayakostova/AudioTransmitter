@@ -12,8 +12,8 @@ android application: [link](https://sourceforge.net/projects/audiotransmitter/fi
 
 #User Guide
 
-![screen]()
-![screen2]()
+![screen](https://cloud.githubusercontent.com/assets/5616532/9252715/85efdb08-41e2-11e5-92be-f4202405aed9.jpg)
+![screen2](https://cloud.githubusercontent.com/assets/5616532/9252623/1928a806-41e2-11e5-9e49-375540516911.jpg)
 
 1. First start the virtual audio driver, You could use VB-Audio driver or SoundFlower as described above.
 2. Set the **audio input** and **audio output** to be with the driver. 
