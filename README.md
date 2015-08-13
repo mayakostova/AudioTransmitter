@@ -2,7 +2,7 @@
 
 An application for remote audio output streaming. Streams audio from a computer to a remote android device (via the android application), which transforms as remote audio speakers communicator. Should be used with a loopback device, or, preferably, with a virtual audio driver. There are plenty available both for Mac and Windows. For me, those are VB-Audio driver for windows ( http://vb-audio.pagesperso-orange.fr/Cable/index.htm  ) and SoundFlower (https://code.google.com/p/soundflower/downloads/list or https://rogueamoeba.com/freebies/soundflower/  ) for Mac. 
 
-The advantage here is that you don't have to have the music. Just place your laptop on an accessible and comfortable space and listen to youtube from those pro speakers hidden in the corner without the need of audio jacks all over the room.
+The advantage here is that you don't have to have the music. Just place your laptop on an accessible and comfortable space and listen to youtube from those pro speakers hidden in the corner without the need of cables all over the room.
 
 #Distributives
 
