@@ -6,7 +6,7 @@ The advantage here is that you don't have to have the music. Just place your lap
 
 #Distributives
 
-windows: [link]() <br/>
+windows: [link](https://sourceforge.net/projects/audiotransmitter/files/windows/) <br/>
 mac: pending... <br/>
 android application: [link](https://sourceforge.net/projects/audiotransmitter/files/android/) 
 
