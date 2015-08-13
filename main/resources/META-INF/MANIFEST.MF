@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Class-Path: javalayer.jar tritonus_mp3-0.3.6.jar tritonus_share-0.3.6.
+ jar tritonus_aos-0.3.6.jar
+Main-Class: com.odonataworkshop.audio.client.StartApplication
+

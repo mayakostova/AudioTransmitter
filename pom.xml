@@ -1,0 +1,161 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.odonataworshop</groupId>
+	<artifactId>audio_transmitter</artifactId>
+	<version>1.0.0</version>
+	<name>AudioTransmitter</name>
+	<description>Simple application to transffer audio from audio output to an android device</description>
+	<developers>
+		<developer>
+			<id>mayakostova</id>
+			<name>Maya Kostova</name>
+			<email>maya.kostova@gmail.com</email>
+		</developer>
+	</developers>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<javafx.version>8.0.45</javafx.version>
+	</properties>
+	<dependencies>
+			
+	</dependencies>
+	<build>
+		<sourceDirectory>main/src</sourceDirectory>
+		<testSourceDirectory>test/src</testSourceDirectory>
+		<resources>
+			<resource>
+				<directory>main/src</directory>
+				<excludes>
+					<exclude>**/*.java</exclude>
+				</excludes>
+			</resource>
+			<resource>
+				<directory>main/resources</directory>
+				<excludes>
+					<exclude>**/*.java</exclude>
+				</excludes>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<compilerArguments>
+						<bootclasspath>${sun.boot.class.path}${path.separator}${java.home}/lib/jfxrt.jar</bootclasspath>
+					</compilerArguments>
+				</configuration>
+			</plugin>
+			<plugin>				
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>2.3</version>
+				<executions>
+					<execution>
+						<id>copy-dependencies</id>
+						<phase>package</phase>
+						<configuration>
+							<overWriteReleases>false</overWriteReleases>
+							<overWriteSnapshots>false</overWriteSnapshots>
+							<overWriteIfNewer>true</overWriteIfNewer>
+						</configuration>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifestEntries>
+							<JavaFX-Version>${javafx.version}+</JavaFX-Version>
+							<Main-Class>com.odonataworkshop.audio.client.StartApplication</Main-Class>
+							<implementation-version>1.0</implementation-version>
+							<JavaFX-Application-Class>com.odonataworkshop.audio.client.StartApplication</JavaFX-Application-Class>
+							<JavaFX-Class-Path>
+
+							</JavaFX-Class-Path>
+						</manifestEntries>
+						<manifest>
+							<addClasspath>true</addClasspath>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.6</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<configuration>
+							<target>
+								<!-- define the deploy ANT task -->
+								<taskdef name="jfxdeploy" classname="com.sun.javafx.tools.ant.DeployFXTask"
+									classpathref="maven.plugin.classpath" />
+								<!-- define the JarSing ANT task -->
+								<taskdef name="jfxsignjar" classname="com.sun.javafx.tools.ant.FXSignJarTask"
+									classpathref="maven.plugin.classpath" />
+								<jfxdeploy width="600" height="400"
+									outdir="${project.build.directory}/deploy" outfile="${project.build.finalName}"
+									nativeBundles="all">
+									<info title="${project.name}" vendor="Maya Kostova"
+										description="Simple application to transffer audio from audio output to an android device.">
+										<icon href="audio_transmitter1.ico" />
+									</info>
+									<application name="${project.name}"
+										mainClass="com.odonataworkshop.audio.client.StartApplication" />
+									<resources>
+										<fileset dir="${project.build.directory}" includes="*.jar" />
+										<fileset dir="${project.build.directory}/dependency"
+											includes="*.jar" />
+									</resources>
+									<!-- set your jvm args -->
+									<platform javafx="${javafx.version}+">
+										<jvmarg value="-Xmx1024m" />
+										<jvmarg value="-Xmx1024m" />
+									</platform>
+								</jfxdeploy>
+								<!-- <jfxsignjar destdir="${project.build.directory}/deploy" keyStore="path/to/your/keystore" 
+									storePass="yourPass" alias="yourAlias" keyPass="keyPass"> <fileset dir="${project.build.directory}/deploy" 
+									includes="*.jar" /> </jfxsignjar> -->
+							</target>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+				<dependencies>
+					<dependency>
+						<groupId>com.oracle</groupId>
+						<artifactId>ant-javafx</artifactId>
+						<version>${javafx.version}</version>
+						<systemPath>${java.home}/../lib/ant-javafx.jar</systemPath>
+						<scope>system</scope>
+					</dependency>
+					<dependency>
+						<groupId>com.oracle</groupId>
+						<artifactId>javafx</artifactId>
+						<version>${javafx.version}</version>
+						<systemPath>${java.home}/lib/ext/jfxrt.jar</systemPath>
+						<scope>system</scope>
+					</dependency>
+				</dependencies>
+			</plugin>
+		</plugins>
+		<finalName>AudioTransmitter</finalName>
+	</build>
+
+
+	<organization>
+		<name>Maya Kostova</name>
+	</organization>
+</project>

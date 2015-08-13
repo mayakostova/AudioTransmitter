@@ -1,0 +1,8 @@
+/.idea
+/AudioTransmitter.iml
+/audiotransmitter_win.xml
+/audiotransmitter_mac.properties
+/audiotransmitter_mac.xml
+/audiotransmitter_win.properties
+
+*.DS_Store

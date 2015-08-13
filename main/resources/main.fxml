@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<?import java.net.URL?>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0"
+            xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            styleClass="root"
+            fx:controller="com.odonataworkshop.audio.client.Controller">
+   <center>
+      <TextArea prefHeight="300.0" maxWidth="430.0" BorderPane.alignment="CENTER" fx:id="txtInfo" editable="false" />
+   </center>
+   <bottom>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <GridPane prefHeight="100.0" prefWidth="340.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="35.0" prefWidth="35.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="35.0" prefWidth="35.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label prefHeight="17.0" prefWidth="43.0" text="host:">
+                        <Insets left="5.0" />
+                  </Label>
+                  <TextField GridPane.columnIndex="1" fx:id="txtHost" />
+                  <Label text="port:" GridPane.columnIndex="2">
+                        <Insets left="5.0" />
+                  </Label>
+                  <TextField GridPane.columnIndex="3" fx:id="txtPort" />
+               </children>
+            </GridPane>
+            <GridPane prefHeight="100.0" prefWidth="198.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Connect" GridPane.halignment="CENTER" GridPane.valignment="CENTER" fx:id="btnConnect" onAction="#onConnectActionPerformed" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Disconnect" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" fx:id="btnDisconnect" onAction="#onDisconnectActionPerformed" />
+               </children>
+            </GridPane>
+         </children>
+      </HBox>
+   </bottom>
+    <stylesheets>
+        <URL value="@styles/main.css" />
+    </stylesheets>
+</BorderPane>
