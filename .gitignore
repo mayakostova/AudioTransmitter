@@ -6,3 +6,5 @@
 /audiotransmitter_win.properties
 
 *.DS_Store
+/dist
+/target
